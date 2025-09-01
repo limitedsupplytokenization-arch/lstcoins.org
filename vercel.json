@@ -11,5 +11,8 @@
       "source": "/api/subscribe",
       "destination": "/api/subscribe.js"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
