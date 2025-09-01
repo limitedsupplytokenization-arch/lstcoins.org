@@ -1,18 +1,7 @@
 {
-  "buildCommand": "echo 'Static site - no build required'",
-  "outputDirectory": ".",
   "functions": {
     "api/subscribe.js": {
       "maxDuration": 10
     }
-  },
-  "rewrites": [
-    {
-      "source": "/api/subscribe",
-      "destination": "/api/subscribe.js"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   }
 }
