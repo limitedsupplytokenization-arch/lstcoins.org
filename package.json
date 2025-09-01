@@ -1,0 +1,18 @@
+{
+  "name": "lstcoins-website",
+  "version": "1.0.0",
+  "description": "LSTcoins official website with email subscription",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build required'",
+    "start": "vercel dev"
+  },
+  "keywords": ["lstcoins", "crypto", "website", "email-subscription"],
+  "author": "LSTcoins Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}

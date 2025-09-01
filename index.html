@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSTcoins - Trade, Safe, Fast</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image"></div>
+    
+    <!-- Navigation Buttons -->
+    <nav class="nav-buttons">
+        <div class="nav-item">
+            <a href="https://testnet.lstcoins.org" target="_blank" class="nav-button testnet-btn">
+                <span class="new-badge">New</span>
+                Testnet
+            </a>
+        </div>
+        
+        <div class="nav-item">
+            <a href="https://docs.lstcoins.org" target="_blank" class="nav-button">What is LST</a>
+        </div>
+        
+        <div class="nav-item">
+            <button class="nav-button social-btn" onclick="toggleSocialDropdown()">
+                Social
+                <div class="dropdown-arrow">▼</div>
+            </button>
+            <div class="social-dropdown" id="socialDropdown">
+                <a href="https://x.com/LSTcoins" target="_blank" class="social-link">
+                    Twitter(X)
+                </a>
+                <a href="https://t.me/LSTcoins" target="_blank" class="social-link">
+                    Telegram
+                </a>
+                <a href="https://farcaster.xyz/lstcoins" target="_blank" class="social-link">
+                    Farcaster
+                </a>
+            </div>
+        </div>
+    </nav>
+
+                                            <!-- Main Container -->
+                    <div class="main-container">
+                        <div class="logo-container">
+                            <img src="logo.gif" alt="LSTcoins Logo" class="logo">
+                        </div>
+                        <div class="swap-container blur-card">
+                            <div class="coming-soon-content">
+                                <h1 class="coming-soon-heading">Coming soon</h1>
+                                <p class="coming-soon-description">Hunters stay sharp. Beta news, giveaways, and updates delivered directly to you. Drop your email and join the list.</p>
+                                <div class="email-subscription">
+                                    <input type="email" placeholder="Enter your email address" class="email-input" id="emailInput">
+                                    <button class="subscribe-button" onclick="subscribeEmail()">Subscribe →</button>
+                                </div>
+                                <div id="subscribeMessage" class="subscribe-message"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Success Overlay -->
+                        <div id="successOverlay" class="success-overlay">
+                            <div class="success-checkmark">
+                                <div class="checkmark-circle">
+                                    <div class="checkmark">✓</div>
+                                </div>
+                                <div class="success-text">Successful!</div>
+                            </div>
+                        </div>
+                    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
