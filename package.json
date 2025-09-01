@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vercel dev",
     "build": "echo 'Static site - no build required'",
-    "start": "vercel dev"
+    "start": "vercel dev",
+    "vercel-build": "echo 'Static site - no build required'"
   },
   "keywords": ["lstcoins", "crypto", "website", "email-subscription"],
   "author": "LSTcoins Team",
