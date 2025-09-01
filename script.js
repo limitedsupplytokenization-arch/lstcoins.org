@@ -32,117 +32,41 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Email subscription functionality
-async function subscribeEmail() {
+// Simple success animation function
+function subscribeEmail() {
     const emailInput = document.getElementById('emailInput');
-    const subscribeMessage = document.getElementById('subscribeMessage');
     const subscribeButton = document.querySelector('.subscribe-button');
-    const successCheckmark = document.getElementById('successCheckmark');
-    const swapContainer = document.querySelector('.swap-container');
     
     const email = emailInput.value.trim();
     
-    // Email format kontrolü
+    // Basic email format check
     if (!email || !email.includes('@')) {
-        showMessage('Please enter a valid email address.', 'error');
-        return;
+        return; // Don't show anything if invalid
     }
     
-    try {
-        // Buton durumunu güncelle
-        subscribeButton.disabled = true;
-        subscribeButton.textContent = 'Subscribing...';
-        
-        // API'ye email gönder
-        const response = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email })
-        });
-        
-        const data = await response.json();
-        
-        if (response.ok) {
-            // Başarılı durumda overlay göster
-            const successOverlay = document.getElementById('successOverlay');
-            successOverlay.classList.add('show');
-            
-            // 5 saniye sonra overlay'i gizle
-            setTimeout(() => {
-                successOverlay.classList.remove('show');
-            }, 5000);
-            
-            emailInput.value = ''; // Input'u temizle
-            updateButtonState(); // Update button state after clearing input
-        } else {
-            showMessage(data.message, 'error');
-        }
-        
-    } catch (error) {
-        showMessage('Network error. Please try again.', 'error');
-    } finally {
-        // Buton durumunu geri al
-        subscribeButton.disabled = false;
-        subscribeButton.textContent = 'Subscribe →';
-    }
-}
-
-// Mesaj gösterme fonksiyonu
-function showMessage(message, type) {
-    const messageDiv = document.getElementById('subscribeMessage');
-    messageDiv.textContent = message;
-    messageDiv.className = `subscribe-message ${type}`;
+    // Show success overlay
+    const successOverlay = document.getElementById('successOverlay');
+    successOverlay.classList.add('show');
     
-    // 5 saniye sonra mesajı gizle
+    // Hide after 5 seconds
     setTimeout(() => {
-        messageDiv.textContent = '';
-        messageDiv.className = 'subscribe-message';
+        successOverlay.classList.remove('show');
     }, 5000);
-}
-
-// Email validation function
-function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Update button state based on email input
-function updateButtonState() {
-    const emailInput = document.getElementById('emailInput');
-    const subscribeButton = document.querySelector('.subscribe-button');
     
-    if (emailInput && subscribeButton) {
-        const email = emailInput.value.trim();
-        const isValidEmail = validateEmail(email);
-        
-        subscribeButton.disabled = !isValidEmail;
-        
-        if (isValidEmail) {
-            subscribeButton.style.opacity = '1';
-        } else {
-            subscribeButton.style.opacity = '0.6';
-        }
-    }
+    // Clear input
+    emailInput.value = '';
 }
+
+
 
 // Enter tuşu ile subscribe
 document.addEventListener('DOMContentLoaded', function() {
     const emailInput = document.getElementById('emailInput');
-    const subscribeButton = document.querySelector('.subscribe-button');
     
-    if (emailInput && subscribeButton) {
-        // Sayfa yüklendiğinde buton disabled
-        subscribeButton.disabled = true;
-        subscribeButton.style.opacity = '0.6';
-        
-        // Email input değişikliklerini dinle
-        emailInput.addEventListener('input', updateButtonState);
-        
+    if (emailInput) {
         // Enter tuşu ile subscribe
         emailInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' && !subscribeButton.disabled) {
+            if (event.key === 'Enter') {
                 subscribeEmail();
             }
         });
