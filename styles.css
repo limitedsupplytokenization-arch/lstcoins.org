@@ -460,7 +460,7 @@ body {
 @media (max-width: 768px) {
     .nav-buttons {
         top: 20px;
-        left: 20px;
+        left: 60px;
         right: 20px;
         gap: 10px;
         flex-direction: row;
@@ -492,12 +492,16 @@ body {
     .subscribe-button {
         width: 100%;
     }
+    
+    .logo-container {
+        top: 25%;
+    }
 }
 
 @media (max-width: 480px) {
     .nav-buttons {
         top: 15px;
-        left: 15px;
+        left: 45px;
         right: 15px;
         gap: 8px;
         flex-direction: row;
@@ -522,5 +526,9 @@ body {
     
     .subscribe-button {
         width: 100%;
+    }
+    
+    .logo-container {
+        top: 22%;
     }
 }
