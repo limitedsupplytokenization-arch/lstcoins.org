@@ -459,10 +459,13 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-buttons {
-        top: 40px;
+        top: 20px;
+        left: 20px;
         right: 20px;
         gap: 10px;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
     
     .nav-button {
@@ -476,12 +479,30 @@ body {
         margin: 20px;
         max-width: 500px;
     }
+    
+    .email-subscription {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .email-input {
+        width: 100%;
+    }
+    
+    .subscribe-button {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
     .nav-buttons {
-        top: 35px;
+        top: 15px;
+        left: 15px;
         right: 15px;
+        gap: 8px;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
     
     .nav-button {
@@ -490,5 +511,16 @@ body {
         min-width: 80px;
     }
     
-
+    .email-subscription {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .email-input {
+        width: 100%;
+    }
+    
+    .subscribe-button {
+        width: 100%;
+    }
 }
